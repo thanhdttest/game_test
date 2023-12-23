@@ -43,7 +43,7 @@
   />
 
   <title>Super Dash - A Platformer Demo Built in Flutter</title>
-  <link rel="manifest" href="game_test/manifest.json">
+  <link rel="manifest" href="manifest.json">
 
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-67589403-11"></script>
   <script>
@@ -67,7 +67,7 @@
       overflow: hidden;
       margin: 0;
       background-color: #346EEB;
-      background: url("game_test/background.svg") no-repeat center center fixed;
+      background: url("background.svg") no-repeat center center fixed;
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -310,10 +310,10 @@
       }
 
       window.addEventListener("load", async function (ev) {
-        const response = await fetch("game_test/assets/AssetManifest.json");
+        const response = await fetch("assets/AssetManifest.json");
         const manifest = await response.json();
         const assets = Object.values(manifest)
-          .map((list) => list.map((url) => "game_test/assets/" + url))
+          .map((list) => list.map((url) => "assets/" + url))
           .reduce((arr, curr) => [...arr, ...curr]);
 
         beginPreloading(assets);
